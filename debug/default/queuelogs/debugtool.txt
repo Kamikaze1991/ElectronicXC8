@@ -1,0 +1,1 @@
+649 1711054967888 XXXX 1711054967888, Thread 649: com.Send returned false 

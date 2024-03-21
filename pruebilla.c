@@ -45,11 +45,44 @@
 
 
 #include <xc.h>
+
 #define _XTAL_FREQ 48000000
 
 #define CLK_DIR LATCbits.LC0
 #define LATCH_DIR LATCbits.LC1
 #define DATA_DIR LATCbits.LC2
+#define TRIG_DIR TRISBbits.RB2
+#define ECHO_DIR TRISBbits.RB3
+#define TRIG_PIN LATBbits.LB2
+#define ECHO_PIN PORTBbits.RB3
+
+void inicializarSensor(void){
+    TRIG_DIR = 0;
+    ECHO_DIR = 0;
+    T1CON = 0xf8;
+    T1CONbits.TMR1ON = 1;
+    
+}
+
+float obtenerDistancia(void){
+    unsigned int timer_high;
+    unsigned int timer_low;
+    
+    TRIG_PIN =1;
+    __delay_ms(10);
+    TRIG_PIN =0;
+    while(ECHO_PIN==0);
+    TMR1H=0x00;
+    TMR1L=0x00;
+    while(ECHO_PIN==1);
+    timer_low=TMR1L;
+    timer_high=TMR1H;
+    float dis_hc = (((timer_high<<8)+timer_low)*0.000666*34.0)/2.0;
+    return dis_hc;
+}
+
+
+
 
 int acumulador=7;
 void setOne(){
@@ -102,9 +135,8 @@ void Send_Byte_Data(uint8_t b_m1)
 }
 
 void main() {
-    unsigned char bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
-    
-    
+    //unsigned char bicubic[8]={0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00};
+    const uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
     
     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb}; 
     uint8_t contador_binario=0x80;
@@ -115,12 +147,13 @@ void main() {
     LATD = 0x00;
     LATC = 0x00;
     LATCbits.LC6=1;
-    
+   
 	while(1)
     {
         __delay_ms(1);
         
         
+        //Send_Byte_Data(0x7f);
         Send_Byte_Data(~contador_binario);
         contador_binario=contador_binario>>1;
         if(contador_binario==0x00){

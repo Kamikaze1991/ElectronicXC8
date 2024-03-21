@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=amateo.X
+PROJECTNAME=ElectronicXC8
 
 # Active Configuration
 DEFAULTCONF=default

@@ -5779,9 +5779,31 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 47 "pruebilla.c" 2
+# 59 "pruebilla.c"
+void inicializarSensor(void){
+    TRISBbits.RB2 = 0;
+    TRISBbits.RB3 = 0;
+    T1CON = 0xf8;
+    T1CONbits.TMR1ON = 1;
 
+}
 
+float obtenerDistancia(void){
+    unsigned int timer_high;
+    unsigned int timer_low;
 
+    LATBbits.LB2 =1;
+    _delay((unsigned long)((10)*(48000000/4000.0)));
+    LATBbits.LB2 =0;
+    while(PORTBbits.RB3==0);
+    TMR1H=0x00;
+    TMR1L=0x00;
+    while(PORTBbits.RB3==1);
+    timer_low=TMR1L;
+    timer_high=TMR1H;
+    float dis_hc = (((timer_high<<8)+timer_low)*0.000666*34.0)/2.0;
+    return dis_hc;
+}
 
 
 
@@ -5837,9 +5859,8 @@ void Send_Byte_Data(uint8_t b_m1)
 }
 
 void main() {
-    unsigned char bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
 
-
+    const uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
 
     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
     uint8_t contador_binario=0x80;
@@ -5854,6 +5875,7 @@ void main() {
  while(1)
     {
         _delay((unsigned long)((1)*(48000000/4000.0)));
+
 
 
         Send_Byte_Data(~contador_binario);

@@ -1,5 +1,90 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"3191 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
+"3636 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3636:     struct {
+[s S148 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S148 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+"3646
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3646:     struct {
+[s S149 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S149 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"3635
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3635: typedef union {
+[u S147 `S148 1 `S149 1 ]
+[n S147 . . . ]
+"3657
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3657: extern volatile TRISBbits_t TRISBbits __attribute__((address(0xF93)));
+[v _TRISBbits `VS147 ~T0 @X0 0 e@3987 ]
+"7415
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7415: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
+"7421
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7421:     struct {
+[s S317 :2 `uc 1 :1 `uc 1 ]
+[n S317 . . NOT_T1SYNC ]
+"7425
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7425:     struct {
+[s S318 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S318 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS T1RUN RD16 ]
+"7434
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7434:     struct {
+[s S319 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S319 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"7441
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7441:     struct {
+[s S320 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S320 . . SOSCEN . T1RD16 ]
+"7420
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7420: typedef union {
+[u S316 `S317 1 `S318 1 `S319 1 `S320 1 ]
+[n S316 . . . . . ]
+"7448
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7448: extern volatile T1CONbits_t T1CONbits __attribute__((address(0xFCD)));
+[v _T1CONbits `VS316 ~T0 @X0 0 e@4045 ]
+"3079
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3079:     struct {
+[s S130 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S130 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"3089
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3089:     struct {
+[s S131 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S131 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"3078
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3078: typedef union {
+[u S129 `S130 1 `S131 1 ]
+[n S129 . . . ]
+"3100
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3100: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS129 ~T0 @X0 0 e@3978 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"2459 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 2459:     struct {
+[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S107 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"2469
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 2469:     struct {
+[s S108 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S108 . INT0 INT1 INT2 . PGM PGC PGD ]
+"2478
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 2478:     struct {
+[s S109 :3 `uc 1 :1 `uc 1 ]
+[n S109 . . CCP2_PA2 ]
+"2458
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 2458: typedef union {
+[u S106 `S107 1 `S108 1 `S109 1 ]
+[n S106 . . . . ]
+"2483
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 2483: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS106 ~T0 @X0 0 e@3969 ]
+"7532
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7532: extern volatile unsigned char TMR1H __attribute__((address(0xFCF)));
+[v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
+"7525
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 7525: extern volatile unsigned char TMR1L __attribute__((address(0xFCE)));
+[v _TMR1L `Vuc ~T0 @X0 0 e@4046 ]
+"3191
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3191:     struct {
 [s S133 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S133 . LATC0 LATC1 LATC2 . LATC6 LATC7 ]
@@ -46,10 +131,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3185
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3185: extern volatile unsigned char LATC __attribute__((address(0xF8B)));
 [v _LATC `Vuc ~T0 @X0 0 e@3979 ]
-[v F205 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF205 ~T0 @X0 0 e ]
-[p i __delay ]
 "7 pruebilla.c
 [p x PLLDIV  =  2   CPUDIV  =  OSC1_PLL2   USBDIV  =  2 ]
 "10
@@ -586,192 +667,273 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"54 pruebilla.c
-[; ;pruebilla.c: 54: int acumulador=7;
+"59 pruebilla.c
+[; ;pruebilla.c: 59: void inicializarSensor(void){
+[v _inicializarSensor `(v ~T0 @X0 1 ef ]
+{
+[e :U _inicializarSensor ]
+[f ]
+"60
+[; ;pruebilla.c: 60:     TRISBbits.RB2 = 0;
+[e = . . _TRISBbits 1 2 -> -> 0 `i `uc ]
+"61
+[; ;pruebilla.c: 61:     TRISBbits.RB3 = 0;
+[e = . . _TRISBbits 1 3 -> -> 0 `i `uc ]
+"62
+[; ;pruebilla.c: 62:     T1CON = 0xf8;
+[e = _T1CON -> -> 248 `i `uc ]
+"63
+[; ;pruebilla.c: 63:     T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 1 0 -> -> 1 `i `uc ]
+"65
+[; ;pruebilla.c: 65: }
+[e :UE 367 ]
+}
+"67
+[; ;pruebilla.c: 67: float obtenerDistancia(void){
+[v _obtenerDistancia `(f ~T0 @X0 1 ef ]
+{
+[e :U _obtenerDistancia ]
+[f ]
+"68
+[; ;pruebilla.c: 68:     unsigned int timer_high;
+[v _timer_high `ui ~T0 @X0 1 a ]
+"69
+[; ;pruebilla.c: 69:     unsigned int timer_low;
+[v _timer_low `ui ~T0 @X0 1 a ]
+"71
+[; ;pruebilla.c: 71:     LATBbits.LB2 =1;
+[e = . . _LATBbits 1 2 -> -> 1 `i `uc ]
+"72
+[; ;pruebilla.c: 72:     _delay((unsigned long)((10)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+"73
+[; ;pruebilla.c: 73:     LATBbits.LB2 =0;
+[e = . . _LATBbits 1 2 -> -> 0 `i `uc ]
+"74
+[; ;pruebilla.c: 74:     while(PORTBbits.RB3==0);
+[e $U 369  ]
+[e :U 370 ]
+[e :U 369 ]
+[e $ == -> . . _PORTBbits 0 3 `i -> 0 `i 370  ]
+[e :U 371 ]
+"75
+[; ;pruebilla.c: 75:     TMR1H=0x00;
+[e = _TMR1H -> -> 0 `i `uc ]
+"76
+[; ;pruebilla.c: 76:     TMR1L=0x00;
+[e = _TMR1L -> -> 0 `i `uc ]
+"77
+[; ;pruebilla.c: 77:     while(PORTBbits.RB3==1);
+[e $U 372  ]
+[e :U 373 ]
+[e :U 372 ]
+[e $ == -> . . _PORTBbits 0 3 `i -> 1 `i 373  ]
+[e :U 374 ]
+"78
+[; ;pruebilla.c: 78:     timer_low=TMR1L;
+[e = _timer_low -> _TMR1L `ui ]
+"79
+[; ;pruebilla.c: 79:     timer_high=TMR1H;
+[e = _timer_high -> _TMR1H `ui ]
+"80
+[; ;pruebilla.c: 80:     float dis_hc = (((timer_high<<8)+timer_low)*0.000666*34.0)/2.0;
+[v _dis_hc `f ~T0 @X0 1 a ]
+[e = _dis_hc -> / * * -> + << _timer_high -> 8 `i _timer_low `d .0.000666 .34.0 .2.0 `f ]
+"81
+[; ;pruebilla.c: 81:     return dis_hc;
+[e ) _dis_hc ]
+[e $UE 368  ]
+"82
+[; ;pruebilla.c: 82: }
+[e :UE 368 ]
+}
+"87
+[; ;pruebilla.c: 87: int acumulador=7;
 [v _acumulador `i ~T0 @X0 1 e ]
 [i _acumulador
 -> 7 `i
 ]
-"55
-[; ;pruebilla.c: 55: void setOne(){
+"88
+[; ;pruebilla.c: 88: void setOne(){
 [v _setOne `(v ~T0 @X0 1 ef ]
 {
 [e :U _setOne ]
 [f ]
-"56
-[; ;pruebilla.c: 56:     LATCbits.LC2=1;
+"89
+[; ;pruebilla.c: 89:     LATCbits.LC2=1;
 [e = . . _LATCbits 1 2 -> -> 1 `i `uc ]
-"57
-[; ;pruebilla.c: 57:     LATCbits.LC0=1;
+"90
+[; ;pruebilla.c: 90:     LATCbits.LC0=1;
 [e = . . _LATCbits 1 0 -> -> 1 `i `uc ]
-"58
-[; ;pruebilla.c: 58:     LATCbits.LC0=0;
+"91
+[; ;pruebilla.c: 91:     LATCbits.LC0=0;
 [e = . . _LATCbits 1 0 -> -> 0 `i `uc ]
-"59
-[; ;pruebilla.c: 59:     LATCbits.LC2=0;
+"92
+[; ;pruebilla.c: 92:     LATCbits.LC2=0;
 [e = . . _LATCbits 1 2 -> -> 0 `i `uc ]
-"60
-[; ;pruebilla.c: 60:     LATCbits.LC1=1;
+"93
+[; ;pruebilla.c: 93:     LATCbits.LC1=1;
 [e = . . _LATCbits 1 1 -> -> 1 `i `uc ]
-"61
-[; ;pruebilla.c: 61:     LATCbits.LC1=0;
+"94
+[; ;pruebilla.c: 94:     LATCbits.LC1=0;
 [e = . . _LATCbits 1 1 -> -> 0 `i `uc ]
-"62
-[; ;pruebilla.c: 62: }
-[e :UE 367 ]
+"95
+[; ;pruebilla.c: 95: }
+[e :UE 375 ]
 }
-"64
-[; ;pruebilla.c: 64: void setZero(){
+"97
+[; ;pruebilla.c: 97: void setZero(){
 [v _setZero `(v ~T0 @X0 1 ef ]
 {
 [e :U _setZero ]
 [f ]
-"65
-[; ;pruebilla.c: 65:     LATCbits.LC2=0;
+"98
+[; ;pruebilla.c: 98:     LATCbits.LC2=0;
 [e = . . _LATCbits 1 2 -> -> 0 `i `uc ]
-"66
-[; ;pruebilla.c: 66:     LATCbits.LC0=1;
+"99
+[; ;pruebilla.c: 99:     LATCbits.LC0=1;
 [e = . . _LATCbits 1 0 -> -> 1 `i `uc ]
-"67
-[; ;pruebilla.c: 67:     LATCbits.LC0=0;
+"100
+[; ;pruebilla.c: 100:     LATCbits.LC0=0;
 [e = . . _LATCbits 1 0 -> -> 0 `i `uc ]
-"68
-[; ;pruebilla.c: 68:     LATCbits.LC2=1;
+"101
+[; ;pruebilla.c: 101:     LATCbits.LC2=1;
 [e = . . _LATCbits 1 2 -> -> 1 `i `uc ]
-"69
-[; ;pruebilla.c: 69:     LATCbits.LC1=1;
+"102
+[; ;pruebilla.c: 102:     LATCbits.LC1=1;
 [e = . . _LATCbits 1 1 -> -> 1 `i `uc ]
-"70
-[; ;pruebilla.c: 70:     LATCbits.LC1=0;
+"103
+[; ;pruebilla.c: 103:     LATCbits.LC1=0;
 [e = . . _LATCbits 1 1 -> -> 0 `i `uc ]
-"71
-[; ;pruebilla.c: 71: }
-[e :UE 368 ]
+"104
+[; ;pruebilla.c: 104: }
+[e :UE 376 ]
 }
-"73
-[; ;pruebilla.c: 73: void desplazamiento(){
+"106
+[; ;pruebilla.c: 106: void desplazamiento(){
 [v _desplazamiento `(v ~T0 @X0 1 ef ]
 {
 [e :U _desplazamiento ]
 [f ]
-"74
-[; ;pruebilla.c: 74:     for(int i=0;i<8;i++){
+"107
+[; ;pruebilla.c: 107:     for(int i=0;i<8;i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 370  ]
-[e $U 371  ]
-[e :U 370 ]
+[e $ < _i -> 8 `i 378  ]
+[e $U 379  ]
+[e :U 378 ]
 {
-"75
-[; ;pruebilla.c: 75:         if(i==acumulador){
-[e $ ! == _i _acumulador 373  ]
+"108
+[; ;pruebilla.c: 108:         if(i==acumulador){
+[e $ ! == _i _acumulador 381  ]
 {
-"76
-[; ;pruebilla.c: 76:             setZero();
+"109
+[; ;pruebilla.c: 109:             setZero();
 [e ( _setZero ..  ]
-"77
-[; ;pruebilla.c: 77:         }
+"110
+[; ;pruebilla.c: 110:         }
 }
-[e $U 374  ]
-"78
-[; ;pruebilla.c: 78:         else{
-[e :U 373 ]
+[e $U 382  ]
+"111
+[; ;pruebilla.c: 111:         else{
+[e :U 381 ]
 {
-"79
-[; ;pruebilla.c: 79:             setOne();
+"112
+[; ;pruebilla.c: 112:             setOne();
 [e ( _setOne ..  ]
-"80
-[; ;pruebilla.c: 80:         }
+"113
+[; ;pruebilla.c: 113:         }
 }
-[e :U 374 ]
-"82
-[; ;pruebilla.c: 82:     }
+[e :U 382 ]
+"115
+[; ;pruebilla.c: 115:     }
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 370  ]
-[e :U 371 ]
+[e $ < _i -> 8 `i 378  ]
+[e :U 379 ]
 }
-"84
-[; ;pruebilla.c: 84:     if(acumulador<0){
-[e $ ! < _acumulador -> 0 `i 375  ]
+"117
+[; ;pruebilla.c: 117:     if(acumulador<0){
+[e $ ! < _acumulador -> 0 `i 383  ]
 {
-"85
-[; ;pruebilla.c: 85:         acumulador=7;
+"118
+[; ;pruebilla.c: 118:         acumulador=7;
 [e = _acumulador -> 7 `i ]
-"86
-[; ;pruebilla.c: 86:     }
+"119
+[; ;pruebilla.c: 119:     }
 }
-[e :U 375 ]
-"87
-[; ;pruebilla.c: 87:     acumulador--;
+[e :U 383 ]
+"120
+[; ;pruebilla.c: 120:     acumulador--;
 [e -- _acumulador -> 1 `i ]
-"88
-[; ;pruebilla.c: 88: }
-[e :UE 369 ]
+"121
+[; ;pruebilla.c: 121: }
+[e :UE 377 ]
 }
-"92
-[; ;pruebilla.c: 92: void Send_Byte_Data(uint8_t b_m1)
+"125
+[; ;pruebilla.c: 125: void Send_Byte_Data(uint8_t b_m1)
 [v _Send_Byte_Data `(v ~T0 @X0 1 ef1`uc ]
-"93
-[; ;pruebilla.c: 93: {
+"126
+[; ;pruebilla.c: 126: {
 {
 [e :U _Send_Byte_Data ]
-"92
-[; ;pruebilla.c: 92: void Send_Byte_Data(uint8_t b_m1)
+"125
+[; ;pruebilla.c: 125: void Send_Byte_Data(uint8_t b_m1)
 [v _b_m1 `uc ~T0 @X0 1 r1 ]
-"93
-[; ;pruebilla.c: 93: {
+"126
+[; ;pruebilla.c: 126: {
 [f ]
-"94
-[; ;pruebilla.c: 94:     for(uint8_t i=0x80; i>0; i=i>>1)
+"127
+[; ;pruebilla.c: 127:     for(uint8_t i=0x80; i>0; i=i>>1)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 128 `i `uc ]
-[e $ > -> _i `i -> 0 `i 377  ]
-[e $U 378  ]
-[e :U 377 ]
-"95
-[; ;pruebilla.c: 95:     {
+[e $ > -> _i `i -> 0 `i 385  ]
+[e $U 386  ]
+[e :U 385 ]
+"128
+[; ;pruebilla.c: 128:     {
 {
-"96
-[; ;pruebilla.c: 96:         (b_m1 & i) ? (LATCbits.LC2 = 1) : (LATCbits.LC2 = 0);
+"129
+[; ;pruebilla.c: 129:         (b_m1 & i) ? (LATCbits.LC2 = 1) : (LATCbits.LC2 = 0);
 [e ? != & -> _b_m1 `i -> _i `i -> 0 `i : -> = . . _LATCbits 1 2 -> -> 1 `i `uc `i -> = . . _LATCbits 1 2 -> -> 0 `i `uc `i ]
-"97
-[; ;pruebilla.c: 97:         LATCbits.LC0 = 1;
+"130
+[; ;pruebilla.c: 130:         LATCbits.LC0 = 1;
 [e = . . _LATCbits 1 0 -> -> 1 `i `uc ]
-"98
-[; ;pruebilla.c: 98:         LATCbits.LC0 = 0;
+"131
+[; ;pruebilla.c: 131:         LATCbits.LC0 = 0;
 [e = . . _LATCbits 1 0 -> -> 0 `i `uc ]
-"99
-[; ;pruebilla.c: 99:     }
+"132
+[; ;pruebilla.c: 132:     }
 }
 [e = _i -> >> -> _i `i -> 1 `i `uc ]
-[e $ > -> _i `i -> 0 `i 377  ]
-[e :U 378 ]
+[e $ > -> _i `i -> 0 `i 385  ]
+[e :U 386 ]
 }
-"100
-[; ;pruebilla.c: 100:     LATCbits.LC1 = 1;
+"133
+[; ;pruebilla.c: 133:     LATCbits.LC1 = 1;
 [e = . . _LATCbits 1 1 -> -> 1 `i `uc ]
-"101
-[; ;pruebilla.c: 101:     LATCbits.LC1 = 0;
+"134
+[; ;pruebilla.c: 134:     LATCbits.LC1 = 0;
 [e = . . _LATCbits 1 1 -> -> 0 `i `uc ]
-"102
-[; ;pruebilla.c: 102: }
-[e :UE 376 ]
+"135
+[; ;pruebilla.c: 135: }
+[e :UE 384 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"104
-[; ;pruebilla.c: 104: void main() {
+"137
+[; ;pruebilla.c: 137: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-[v F3223 `uc ~T0 @X0 -> 8 `i s ]
-[i F3223
+[v F3228 `Cuc ~T0 @X0 -> 8 `i s ]
+[i F3228
 :U ..
-"105
-[; ;pruebilla.c: 105:     unsigned char bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
+"139
+[; ;pruebilla.c: 139:     const uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
 -> -> 16 `i `uc
 -> -> 24 `i `uc
 -> -> 28 `i `uc
@@ -782,13 +944,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 16 `i `uc
 ..
 ]
-[v _bicubic `uc ~T0 @X0 -> 8 `i a ]
-[e = _bicubic F3223 ]
-[v F3225 `Cuc ~T0 @X0 -> 8 `i s ]
-[i F3225
+[v _bicubic `Cuc ~T0 @X0 -> 8 `i a ]
+[e = _bicubic F3228 ]
+[v F3230 `Cuc ~T0 @X0 -> 8 `i s ]
+[i F3230
 :U ..
-"109
-[; ;pruebilla.c: 109:     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
+"141
+[; ;pruebilla.c: 141:     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
 -> -> 1 `i `uc
 -> -> 227 `i `uc
 -> -> 247 `i `uc
@@ -800,85 +962,85 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _peaton_stop `Cuc ~T0 @X0 -> 8 `i a ]
-[e = _peaton_stop F3225 ]
-"110
-[; ;pruebilla.c: 110:     uint8_t contador_binario=0x80;
+[e = _peaton_stop F3230 ]
+"142
+[; ;pruebilla.c: 142:     uint8_t contador_binario=0x80;
 [v _contador_binario `uc ~T0 @X0 1 a ]
 [e = _contador_binario -> -> 128 `i `uc ]
-"111
-[; ;pruebilla.c: 111:     int CONTADOR =0;
+"143
+[; ;pruebilla.c: 143:     int CONTADOR =0;
 [v _CONTADOR `i ~T0 @X0 1 a ]
 [e = _CONTADOR -> 0 `i ]
-"112
-[; ;pruebilla.c: 112:     ADCON1bits.PCFG=0x0f;
+"144
+[; ;pruebilla.c: 144:     ADCON1bits.PCFG=0x0f;
 [e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-"113
-[; ;pruebilla.c: 113:     TRISD = 0x00;
+"145
+[; ;pruebilla.c: 145:     TRISD = 0x00;
 [e = _TRISD -> -> 0 `i `uc ]
-"114
-[; ;pruebilla.c: 114:     TRISC = 0x00;
+"146
+[; ;pruebilla.c: 146:     TRISC = 0x00;
 [e = _TRISC -> -> 0 `i `uc ]
-"115
-[; ;pruebilla.c: 115:     LATD = 0x00;
+"147
+[; ;pruebilla.c: 147:     LATD = 0x00;
 [e = _LATD -> -> 0 `i `uc ]
-"116
-[; ;pruebilla.c: 116:     LATC = 0x00;
+"148
+[; ;pruebilla.c: 148:     LATC = 0x00;
 [e = _LATC -> -> 0 `i `uc ]
-"117
-[; ;pruebilla.c: 117:     LATCbits.LC6=1;
+"149
+[; ;pruebilla.c: 149:     LATCbits.LC6=1;
 [e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"119
-[; ;pruebilla.c: 119:  while(1)
-[e :U 382 ]
-"120
-[; ;pruebilla.c: 120:     {
+"151
+[; ;pruebilla.c: 151:  while(1)
+[e :U 390 ]
+"152
+[; ;pruebilla.c: 152:     {
 {
-"121
-[; ;pruebilla.c: 121:         _delay((unsigned long)((1)*(48000000/4000.0)));
+"153
+[; ;pruebilla.c: 153:         _delay((unsigned long)((1)*(48000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"124
-[; ;pruebilla.c: 124:         Send_Byte_Data(~contador_binario);
+"157
+[; ;pruebilla.c: 157:         Send_Byte_Data(~contador_binario);
 [e ( _Send_Byte_Data (1 -> ~ -> _contador_binario `i `uc ]
-"125
-[; ;pruebilla.c: 125:         contador_binario=contador_binario>>1;
+"158
+[; ;pruebilla.c: 158:         contador_binario=contador_binario>>1;
 [e = _contador_binario -> >> -> _contador_binario `i -> 1 `i `uc ]
-"126
-[; ;pruebilla.c: 126:         if(contador_binario==0x00){
-[e $ ! == -> _contador_binario `i -> 0 `i 384  ]
+"159
+[; ;pruebilla.c: 159:         if(contador_binario==0x00){
+[e $ ! == -> _contador_binario `i -> 0 `i 392  ]
 {
-"127
-[; ;pruebilla.c: 127:             contador_binario=0x80;
+"160
+[; ;pruebilla.c: 160:             contador_binario=0x80;
 [e = _contador_binario -> -> 128 `i `uc ]
-"128
-[; ;pruebilla.c: 128:         }
+"161
+[; ;pruebilla.c: 161:         }
 }
-[e :U 384 ]
-"129
-[; ;pruebilla.c: 129:         LATD=bicubic[CONTADOR];
+[e :U 392 ]
+"162
+[; ;pruebilla.c: 162:         LATD=bicubic[CONTADOR];
 [e = _LATD *U + &U _bicubic * -> -> _CONTADOR `ui `ux -> -> # *U &U _bicubic `ui `ux ]
-"131
-[; ;pruebilla.c: 131:         CONTADOR++;
+"164
+[; ;pruebilla.c: 164:         CONTADOR++;
 [e ++ _CONTADOR -> 1 `i ]
-"132
-[; ;pruebilla.c: 132:         if(CONTADOR>7)
-[e $ ! > _CONTADOR -> 7 `i 385  ]
-"133
-[; ;pruebilla.c: 133:         {
+"165
+[; ;pruebilla.c: 165:         if(CONTADOR>7)
+[e $ ! > _CONTADOR -> 7 `i 393  ]
+"166
+[; ;pruebilla.c: 166:         {
 {
-"134
-[; ;pruebilla.c: 134:             CONTADOR=0;
+"167
+[; ;pruebilla.c: 167:             CONTADOR=0;
 [e = _CONTADOR -> 0 `i ]
-"135
-[; ;pruebilla.c: 135:         }
+"168
+[; ;pruebilla.c: 168:         }
 }
-[e :U 385 ]
-"139
-[; ;pruebilla.c: 139:     }
+[e :U 393 ]
+"172
+[; ;pruebilla.c: 172:     }
 }
-[e :U 381 ]
-[e $U 382  ]
-[e :U 383 ]
-"140
-[; ;pruebilla.c: 140: }
-[e :UE 380 ]
+[e :U 389 ]
+[e $U 390  ]
+[e :U 391 ]
+"173
+[; ;pruebilla.c: 173: }
+[e :UE 388 ]
 }
