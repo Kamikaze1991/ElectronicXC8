@@ -5747,13 +5747,13 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 15 "pruebilla.c" 2
-# 32 "pruebilla.c"
+# 30 "pruebilla.c"
 void inicializarSensor(){
     ADCON1bits.PCFG=0x0f;
     TRISAbits.RA0 = 0;
     TRISAbits.RA1 = 1;
-    TRISAbits.RA2=0;
-
+    T0CON=0x88;
+    TMR0=0;
 }
 
 void inicializarPantalla()
@@ -5797,15 +5797,27 @@ void Send_Byte_Data(uint8_t b_m1)
     LATCbits.LC1 = 0;
 }
 
+void drawCoord(int fila_in, int columna_in){
+        int col_in = fila_in;
+        int fil_in= columna_in;
+        fil_in=(fil_in-7)*-1;
+        uint8_t fila=0x80;
+        uint8_t columna=0x80;
+        columna=columna>>col_in;
+        fila=fila>>fil_in;
+        LATD=fila;
+        Send_Byte_Data(~columna);
+}
+
 void main() {
 
 
-    const uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
+    uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
 
     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
     uint8_t contador_binario=0x80;
     int CONTADOR =0;
-# 97 "pruebilla.c"
+# 107 "pruebilla.c"
     inicializarSensor();
 
 
@@ -5817,31 +5829,14 @@ void main() {
     TRISC = 0x00;
     LATD = 0x00;
     LATCbits.LC6=1;
-    LATAbits.LA0 =0;
-    LATAbits.LA2=1;
+
  while(1)
     {
-        if(PORTAbits.RA1==1)
-            LATAbits.LA0 =1;
-        else
-            LATAbits.LA0 =0;
 
 
+        _delay((unsigned long)((1)*(48000000/4000.0)));
 
-        _delay((unsigned long)((100)*(48000000/4000.0)));
-
-        Send_Byte_Data(~contador_binario);
-        contador_binario=contador_binario>>1;
-        if(contador_binario==0x00){
-            contador_binario=0x80;
-        }
-        LATD=bicubic[CONTADOR];
-
-        CONTADOR++;
-        if(CONTADOR>7)
-        {
-            CONTADOR=0;
-        }
+        drawCoord(0,0);
 
 
     }

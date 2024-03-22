@@ -115,6 +115,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3208
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3208: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
 [v _LATCbits `VS132 ~T0 @X0 0 e@3979 ]
+"3263
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3263: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 [p mainexit ]
 "4001
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 4001: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
@@ -122,9 +125,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3847
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3847: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"3263
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 3263: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
-[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "1 pruebilla.c
 [p x PLLDIV  =  2   CPUDIV  =  OSC1_PLL2   USBDIV  =  2 ]
 "2
@@ -662,295 +662,319 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "30 pruebilla.c
-[; ;pruebilla.c: 30: void inicializarSensor(){
+[; ;pruebilla.c: 30: uint16_t fila_flow;
+[v _fila_flow `us ~T0 @X0 1 e ]
+"31
+[; ;pruebilla.c: 31: uint16_t columna_flow;
+[v _columna_flow `us ~T0 @X0 1 e ]
+"32
+[; ;pruebilla.c: 32: void inicializarSensor(){
 [v _inicializarSensor `(v ~T0 @X0 1 ef ]
 {
 [e :U _inicializarSensor ]
 [f ]
-"31
-[; ;pruebilla.c: 31:     ADCON1bits.PCFG=0x0f;
-[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
-"32
-[; ;pruebilla.c: 32:     TRISAbits.RA0 = 0;
-[e = . . _TRISAbits 1 0 -> -> 0 `i `uc ]
 "33
-[; ;pruebilla.c: 33:     TRISAbits.RA1 = 1;
-[e = . . _TRISAbits 1 1 -> -> 1 `i `uc ]
+[; ;pruebilla.c: 33:     ADCON1bits.PCFG=0x0f;
+[e = . . _ADCON1bits 0 0 -> -> 15 `i `uc ]
 "34
-[; ;pruebilla.c: 34:     T0CON=0x88;
-[e = _T0CON -> -> 136 `i `uc ]
+[; ;pruebilla.c: 34:     TRISAbits.RA0 = 0;
+[e = . . _TRISAbits 1 0 -> -> 0 `i `uc ]
 "35
-[; ;pruebilla.c: 35:     TMR0=0;
-[e = _TMR0 -> -> 0 `i `us ]
+[; ;pruebilla.c: 35:     TRISAbits.RA1 = 1;
+[e = . . _TRISAbits 1 1 -> -> 1 `i `uc ]
 "36
-[; ;pruebilla.c: 36: }
+[; ;pruebilla.c: 36:     T0CON=0x88;
+[e = _T0CON -> -> 136 `i `uc ]
+"37
+[; ;pruebilla.c: 37:     TMR0=0;
+[e = _TMR0 -> -> 0 `i `us ]
+"38
+[; ;pruebilla.c: 38: }
 [e :UE 367 ]
 }
-"38
-[; ;pruebilla.c: 38: void inicializarPantalla()
+"40
+[; ;pruebilla.c: 40: void inicializarPantalla()
 [v _inicializarPantalla `(v ~T0 @X0 1 ef ]
-"39
-[; ;pruebilla.c: 39: {
+"41
+[; ;pruebilla.c: 41: {
 {
 [e :U _inicializarPantalla ]
 [f ]
-"41
-[; ;pruebilla.c: 41: }
+"43
+[; ;pruebilla.c: 43: }
 [e :UE 368 ]
 }
-"45
-[; ;pruebilla.c: 45: float obtenerDistancia(void){
+"47
+[; ;pruebilla.c: 47: float obtenerDistancia(void){
 [v _obtenerDistancia `(f ~T0 @X0 1 ef ]
 {
 [e :U _obtenerDistancia ]
 [f ]
-"47
-[; ;pruebilla.c: 47:     float distancia;
-[v _distancia `f ~T0 @X0 1 a ]
-"48
-[; ;pruebilla.c: 48:     uint16_t tiempo;
-[v _tiempo `us ~T0 @X0 1 a ]
 "49
-[; ;pruebilla.c: 49:     LATAbits.LA0 =1;
-[e = . . _LATAbits 1 0 -> -> 1 `i `uc ]
+[; ;pruebilla.c: 49:     float distancia;
+[v _distancia `f ~T0 @X0 1 a ]
 "50
-[; ;pruebilla.c: 50:     _delay((unsigned long)((10)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
+[; ;pruebilla.c: 50:     uint16_t tiempo;
+[v _tiempo `us ~T0 @X0 1 a ]
 "51
-[; ;pruebilla.c: 51:     LATAbits.LA0 =0;
-[e = . . _LATAbits 1 0 -> -> 0 `i `uc ]
+[; ;pruebilla.c: 51:     LATAbits.LA0 =1;
+[e = . . _LATAbits 1 0 -> -> 1 `i `uc ]
 "52
-[; ;pruebilla.c: 52:     TMR0 =0;
-[e = _TMR0 -> -> 0 `i `us ]
+[; ;pruebilla.c: 52:     _delay((unsigned long)((10)*(48000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
 "53
-[; ;pruebilla.c: 53:     while(PORTAbits.RA1==0);
+[; ;pruebilla.c: 53:     LATAbits.LA0 =0;
+[e = . . _LATAbits 1 0 -> -> 0 `i `uc ]
+"54
+[; ;pruebilla.c: 54:     TMR0 =0;
+[e = _TMR0 -> -> 0 `i `us ]
+"55
+[; ;pruebilla.c: 55:     while(PORTAbits.RA1==0);
 [e $U 370  ]
 [e :U 371 ]
 [e :U 370 ]
 [e $ == -> . . _PORTAbits 0 1 `i -> 0 `i 371  ]
 [e :U 372 ]
-"54
-[; ;pruebilla.c: 54:     T0CONbits.TMR0ON=1;
+"56
+[; ;pruebilla.c: 56:     T0CONbits.TMR0ON=1;
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"55
-[; ;pruebilla.c: 55:     while(PORTAbits.RA1==1);
+"57
+[; ;pruebilla.c: 57:     while(PORTAbits.RA1==1);
 [e $U 373  ]
 [e :U 374 ]
 [e :U 373 ]
 [e $ == -> . . _PORTAbits 0 1 `i -> 1 `i 374  ]
 [e :U 375 ]
-"56
-[; ;pruebilla.c: 56:     T0CONbits.TMR0ON=0;
-[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
-"57
-[; ;pruebilla.c: 57:     tiempo=TMR0;
-[e = _tiempo _TMR0 ]
 "58
-[; ;pruebilla.c: 58:     distancia=tiempo*0.017/2.0;
-[e = _distancia -> / * -> -> _tiempo `ui `d .0.017 .2.0 `f ]
+[; ;pruebilla.c: 58:     T0CONbits.TMR0ON=0;
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
 "59
-[; ;pruebilla.c: 59:     return distancia;
+[; ;pruebilla.c: 59:     tiempo=TMR0;
+[e = _tiempo _TMR0 ]
+"60
+[; ;pruebilla.c: 60:     distancia=tiempo*0.017/2.0;
+[e = _distancia -> / * -> -> _tiempo `ui `d .0.017 .2.0 `f ]
+"61
+[; ;pruebilla.c: 61:     return distancia;
 [e ) _distancia ]
 [e $UE 369  ]
-"60
-[; ;pruebilla.c: 60: }
+"62
+[; ;pruebilla.c: 62: }
 [e :UE 369 ]
 }
-"65
-[; ;pruebilla.c: 65: int acumulador=7;
+"67
+[; ;pruebilla.c: 67: int acumulador=7;
 [v _acumulador `i ~T0 @X0 1 e ]
 [i _acumulador
 -> 7 `i
 ]
-"67
-[; ;pruebilla.c: 67: void Send_Byte_Data(uint8_t b_m1)
+"69
+[; ;pruebilla.c: 69: void Send_Byte_Data(uint8_t b_m1)
 [v _Send_Byte_Data `(v ~T0 @X0 1 ef1`uc ]
-"68
-[; ;pruebilla.c: 68: {
+"70
+[; ;pruebilla.c: 70: {
 {
 [e :U _Send_Byte_Data ]
-"67
-[; ;pruebilla.c: 67: void Send_Byte_Data(uint8_t b_m1)
-[v _b_m1 `uc ~T0 @X0 1 r1 ]
-"68
-[; ;pruebilla.c: 68: {
-[f ]
 "69
-[; ;pruebilla.c: 69:     for(uint8_t i=0x80; i>0; i=i>>1)
+[; ;pruebilla.c: 69: void Send_Byte_Data(uint8_t b_m1)
+[v _b_m1 `uc ~T0 @X0 1 r1 ]
+"70
+[; ;pruebilla.c: 70: {
+[f ]
+"71
+[; ;pruebilla.c: 71:     for(uint8_t i=0x80; i>0; i=i>>1)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 128 `i `uc ]
 [e $ > -> _i `i -> 0 `i 377  ]
 [e $U 378  ]
 [e :U 377 ]
-"70
-[; ;pruebilla.c: 70:     {
-{
-"71
-[; ;pruebilla.c: 71:         (b_m1 & i) ? (LATCbits.LC2 = 1) : (LATCbits.LC2 = 0);
-[e ? != & -> _b_m1 `i -> _i `i -> 0 `i : -> = . . _LATCbits 1 2 -> -> 1 `i `uc `i -> = . . _LATCbits 1 2 -> -> 0 `i `uc `i ]
 "72
-[; ;pruebilla.c: 72:         LATCbits.LC0 = 1;
-[e = . . _LATCbits 1 0 -> -> 1 `i `uc ]
+[; ;pruebilla.c: 72:     {
+{
 "73
-[; ;pruebilla.c: 73:         LATCbits.LC0 = 0;
-[e = . . _LATCbits 1 0 -> -> 0 `i `uc ]
+[; ;pruebilla.c: 73:         (b_m1 & i) ? (LATCbits.LC2 = 1) : (LATCbits.LC2 = 0);
+[e ? != & -> _b_m1 `i -> _i `i -> 0 `i : -> = . . _LATCbits 1 2 -> -> 1 `i `uc `i -> = . . _LATCbits 1 2 -> -> 0 `i `uc `i ]
 "74
-[; ;pruebilla.c: 74:     }
+[; ;pruebilla.c: 74:         LATCbits.LC0 = 1;
+[e = . . _LATCbits 1 0 -> -> 1 `i `uc ]
+"75
+[; ;pruebilla.c: 75:         LATCbits.LC0 = 0;
+[e = . . _LATCbits 1 0 -> -> 0 `i `uc ]
+"76
+[; ;pruebilla.c: 76:     }
 }
 [e = _i -> >> -> _i `i -> 1 `i `uc ]
 [e $ > -> _i `i -> 0 `i 377  ]
 [e :U 378 ]
 }
-"75
-[; ;pruebilla.c: 75:     LATCbits.LC1 = 1;
-[e = . . _LATCbits 1 1 -> -> 1 `i `uc ]
-"76
-[; ;pruebilla.c: 76:     LATCbits.LC1 = 0;
-[e = . . _LATCbits 1 1 -> -> 0 `i `uc ]
 "77
-[; ;pruebilla.c: 77: }
+[; ;pruebilla.c: 77:     LATCbits.LC1 = 1;
+[e = . . _LATCbits 1 1 -> -> 1 `i `uc ]
+"78
+[; ;pruebilla.c: 78:     LATCbits.LC1 = 0;
+[e = . . _LATCbits 1 1 -> -> 0 `i `uc ]
+"79
+[; ;pruebilla.c: 79: }
 [e :UE 376 ]
 }
+"81
+[; ;pruebilla.c: 81: void drawCoord(int fila_in, int columna_in){
+[v _drawCoord `(v ~T0 @X0 1 ef2`i`i ]
+{
+[e :U _drawCoord ]
+[v _fila_in `i ~T0 @X0 1 r1 ]
+[v _columna_in `i ~T0 @X0 1 r2 ]
+[f ]
+"82
+[; ;pruebilla.c: 82:         int col_in = columna_in;
+[v _col_in `i ~T0 @X0 1 a ]
+[e = _col_in _columna_in ]
+"83
+[; ;pruebilla.c: 83:         int fil_in= fila_in;
+[v _fil_in `i ~T0 @X0 1 a ]
+[e = _fil_in _fila_in ]
+"84
+[; ;pruebilla.c: 84:         fil_in=(fil_in-7)*-1;
+[e = _fil_in * - _fil_in -> 7 `i -U -> 1 `i ]
+"85
+[; ;pruebilla.c: 85:         fila_flow=0x80;
+[e = _fila_flow -> -> 128 `i `us ]
+"86
+[; ;pruebilla.c: 86:         columna_flow=0x80;
+[e = _columna_flow -> -> 128 `i `us ]
+"87
+[; ;pruebilla.c: 87:         columna_flow=columna_flow>>col_in;
+[e = _columna_flow -> >> -> _columna_flow `ui _col_in `us ]
+"88
+[; ;pruebilla.c: 88:         fila_flow=fila_flow>>fil_in;
+[e = _fila_flow -> >> -> _fila_flow `ui _fil_in `us ]
+"89
+[; ;pruebilla.c: 89:         Send_Byte_Data(~columna_flow);
+[e ( _Send_Byte_Data (1 -> ~ -> _columna_flow `ui `uc ]
+"90
+[; ;pruebilla.c: 90:         LATD=fila_flow;
+[e = _LATD -> _fila_flow `uc ]
+"91
+[; ;pruebilla.c: 91: }
+[e :UE 380 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"79
-[; ;pruebilla.c: 79: void main() {
+"93
+[; ;pruebilla.c: 93: void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-[v F3224 `Cuc ~T0 @X0 -> 8 `i s ]
-[i F3224
-:U ..
-"82
-[; ;pruebilla.c: 82:     const uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
--> -> 16 `i `uc
--> -> 24 `i `uc
--> -> 28 `i `uc
--> -> 254 `i `uc
--> -> 254 `i `uc
--> -> 28 `i `uc
--> -> 24 `i `uc
--> -> 16 `i `uc
-..
-]
-[v _bicubic `Cuc ~T0 @X0 -> 8 `i a ]
-[e = _bicubic F3224 ]
-[v F3226 `Cuc ~T0 @X0 -> 8 `i s ]
-[i F3226
-:U ..
-"84
-[; ;pruebilla.c: 84:     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
--> -> 1 `i `uc
--> -> 227 `i `uc
--> -> 247 `i `uc
--> -> 227 `i `uc
--> -> 213 `i `uc
--> -> 247 `i `uc
--> -> 235 `i `uc
--> -> 235 `i `uc
-..
-]
-[v _peaton_stop `Cuc ~T0 @X0 -> 8 `i a ]
-[e = _peaton_stop F3226 ]
-"85
-[; ;pruebilla.c: 85:     uint8_t contador_binario=0x80;
-[v _contador_binario `uc ~T0 @X0 1 a ]
-[e = _contador_binario -> -> 128 `i `uc ]
-"86
-[; ;pruebilla.c: 86:     int CONTADOR =0;
-[v _CONTADOR `i ~T0 @X0 1 a ]
-[e = _CONTADOR -> 0 `i ]
-"95
-[; ;pruebilla.c: 95:     inicializarSensor();
+"109
+[; ;pruebilla.c: 109:     inicializarSensor();
 [e ( _inicializarSensor ..  ]
-"102
-[; ;pruebilla.c: 102:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"103
-[; ;pruebilla.c: 103:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
-"104
-[; ;pruebilla.c: 104:     LATD = 0x00;
-[e = _LATD -> -> 0 `i `uc ]
-"105
-[; ;pruebilla.c: 105:     LATCbits.LC6=1;
-[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
-"107
-[; ;pruebilla.c: 107:  while(1)
-[e :U 382 ]
-"108
-[; ;pruebilla.c: 108:     {
-{
-"112
-[; ;pruebilla.c: 112:         float distancia= obtenerDistancia();
-[v _distancia `f ~T0 @X0 1 a ]
-[e = _distancia ( _obtenerDistancia ..  ]
-"113
-[; ;pruebilla.c: 113:         if (distancia>200){
-[e $ ! > _distancia -> -> 200 `i `f 384  ]
-{
-"114
-[; ;pruebilla.c: 114:             LATD=bicubic[1];
-[e = _LATD *U + &U _bicubic * -> -> -> 1 `i `ui `ux -> -> # *U &U _bicubic `ui `ux ]
-"115
-[; ;pruebilla.c: 115:             Send_Byte_Data(0x01);
-[e ( _Send_Byte_Data (1 -> -> 1 `i `uc ]
 "116
-[; ;pruebilla.c: 116:         }
-}
-[e $U 385  ]
+[; ;pruebilla.c: 116:     TRISD = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
 "117
-[; ;pruebilla.c: 117:         else{
-[e :U 384 ]
-{
+[; ;pruebilla.c: 117:     TRISC = 0x00;
+[e = _TRISC -> -> 0 `i `uc ]
 "118
-[; ;pruebilla.c: 118:             LATD=bicubic[2];
-[e = _LATD *U + &U _bicubic * -> -> -> 2 `i `ui `ux -> -> # *U &U _bicubic `ui `ux ]
+[; ;pruebilla.c: 118:     LATD = 0x00;
+[e = _LATD -> -> 0 `i `uc ]
 "119
-[; ;pruebilla.c: 119:             Send_Byte_Data(0x00);
-[e ( _Send_Byte_Data (1 -> -> 0 `i `uc ]
+[; ;pruebilla.c: 119:     LATCbits.LC6=1;
+[e = . . _LATCbits 1 4 -> -> 1 `i `uc ]
 "120
-[; ;pruebilla.c: 120:         }
-}
-[e :U 385 ]
-"124
-[; ;pruebilla.c: 124:         contador_binario=contador_binario>>1;
-[e = _contador_binario -> >> -> _contador_binario `i -> 1 `i `uc ]
-"125
-[; ;pruebilla.c: 125:         if(contador_binario==0x00){
-[e $ ! == -> _contador_binario `i -> 0 `i 386  ]
+[; ;pruebilla.c: 120:     int contador=0;
+[v _contador `i ~T0 @X0 1 a ]
+[e = _contador -> 0 `i ]
+"121
+[; ;pruebilla.c: 121:  while(1)
+[e :U 383 ]
+"122
+[; ;pruebilla.c: 122:     {
 {
 "126
-[; ;pruebilla.c: 126:             contador_binario=0x80;
-[e = _contador_binario -> -> 128 `i `uc ]
-"127
-[; ;pruebilla.c: 127:         }
-}
-[e :U 386 ]
+[; ;pruebilla.c: 126:         float distancia= obtenerDistancia();
+[v _distancia `f ~T0 @X0 1 a ]
+[e = _distancia ( _obtenerDistancia ..  ]
+"128
+[; ;pruebilla.c: 128:         if(distancia>0&&distancia<50)drawCoord(0,1);
+[e $ ! && > _distancia -> -> 0 `i `f < _distancia -> -> 50 `i `f 385  ]
+[e ( _drawCoord (2 , -> 0 `i -> 1 `i ]
+[e $U 386  ]
+"129
+[; ;pruebilla.c: 129:         else if(distancia>50&&distancia<100)drawCoord(0,0);
+[e :U 385 ]
+[e $ ! && > _distancia -> -> 50 `i `f < _distancia -> -> 100 `i `f 387  ]
+[e ( _drawCoord (2 , -> 0 `i -> 0 `i ]
+[e $U 388  ]
 "130
-[; ;pruebilla.c: 130:         CONTADOR++;
-[e ++ _CONTADOR -> 1 `i ]
-"131
-[; ;pruebilla.c: 131:         if(CONTADOR>7)
-[e $ ! > _CONTADOR -> 7 `i 387  ]
-"132
-[; ;pruebilla.c: 132:         {
-{
-"133
-[; ;pruebilla.c: 133:             CONTADOR=0;
-[e = _CONTADOR -> 0 `i ]
-"134
-[; ;pruebilla.c: 134:         }
-}
+[; ;pruebilla.c: 130:         else if(distancia>100&&distancia<150)drawCoord(0,1);
 [e :U 387 ]
+[e $ ! && > _distancia -> -> 100 `i `f < _distancia -> -> 150 `i `f 389  ]
+[e ( _drawCoord (2 , -> 0 `i -> 1 `i ]
+[e $U 390  ]
+"131
+[; ;pruebilla.c: 131:         else if(distancia>150&&distancia<200)drawCoord(0,2);
+[e :U 389 ]
+[e $ ! && > _distancia -> -> 150 `i `f < _distancia -> -> 200 `i `f 391  ]
+[e ( _drawCoord (2 , -> 0 `i -> 2 `i ]
+[e $U 392  ]
+"132
+[; ;pruebilla.c: 132:         else if(distancia>200&&distancia<250)drawCoord(0,3);
+[e :U 391 ]
+[e $ ! && > _distancia -> -> 200 `i `f < _distancia -> -> 250 `i `f 393  ]
+[e ( _drawCoord (2 , -> 0 `i -> 3 `i ]
+[e $U 394  ]
+"133
+[; ;pruebilla.c: 133:         else if(distancia>250&&distancia<300)drawCoord(0,4);
+[e :U 393 ]
+[e $ ! && > _distancia -> -> 250 `i `f < _distancia -> -> 300 `i `f 395  ]
+[e ( _drawCoord (2 , -> 0 `i -> 4 `i ]
+[e $U 396  ]
+"134
+[; ;pruebilla.c: 134:         else if(distancia>300&&distancia<350)drawCoord(0,5);
+[e :U 395 ]
+[e $ ! && > _distancia -> -> 300 `i `f < _distancia -> -> 350 `i `f 397  ]
+[e ( _drawCoord (2 , -> 0 `i -> 5 `i ]
+[e $U 398  ]
+"135
+[; ;pruebilla.c: 135:         else if(distancia>350&&distancia<400)drawCoord(0,6);
+[e :U 397 ]
+[e $ ! && > _distancia -> -> 350 `i `f < _distancia -> -> 400 `i `f 399  ]
+[e ( _drawCoord (2 , -> 0 `i -> 6 `i ]
+[e $U 400  ]
+"136
+[; ;pruebilla.c: 136:         else if(distancia>400&&distancia<450)drawCoord(0,7);
+[e :U 399 ]
+[e $ ! && > _distancia -> -> 400 `i `f < _distancia -> -> 450 `i `f 401  ]
+[e ( _drawCoord (2 , -> 0 `i -> 7 `i ]
+[e $U 402  ]
 "137
-[; ;pruebilla.c: 137:     }
-}
-[e :U 381 ]
-[e $U 382  ]
-[e :U 383 ]
+[; ;pruebilla.c: 137:         else if(distancia>450&&distancia<500)drawCoord(1,0);
+[e :U 401 ]
+[e $ ! && > _distancia -> -> 450 `i `f < _distancia -> -> 500 `i `f 403  ]
+[e ( _drawCoord (2 , -> 1 `i -> 0 `i ]
+[e $U 404  ]
 "138
-[; ;pruebilla.c: 138: }
-[e :UE 380 ]
+[; ;pruebilla.c: 138:         else drawCoord(1,1);
+[e :U 403 ]
+[e ( _drawCoord (2 , -> 1 `i -> 1 `i ]
+[e :U 404 ]
+[e :U 402 ]
+[e :U 400 ]
+[e :U 398 ]
+[e :U 396 ]
+[e :U 394 ]
+[e :U 392 ]
+[e :U 390 ]
+[e :U 388 ]
+[e :U 386 ]
+"143
+[; ;pruebilla.c: 143:     }
+}
+[e :U 382 ]
+[e $U 383  ]
+[e :U 384 ]
+"144
+[; ;pruebilla.c: 144: }
+[e :UE 381 ]
 }
