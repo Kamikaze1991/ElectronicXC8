@@ -7,51 +7,19 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "pruebilla.c" 2
-
-
-
-
-
-
 #pragma config PLLDIV = 2, CPUDIV = OSC1_PLL2, USBDIV = 2
-
-
 #pragma config FOSC = HSPLL_HS, FCMEN = OFF, IESO = OFF
-
-
 #pragma config PWRT = OFF, BOR = OFF, BORV = 3, VREGEN = OFF
-
-
 #pragma config WDT = OFF
 #pragma config WDTPS = 32768
-
-
 #pragma config CCP2MX = ON, PBADEN = OFF, LPT1OSC = OFF, MCLRE = ON
-
-
 #pragma config STVREN = ON, LVP = OFF, ICPRT = OFF, XINST = OFF
-
-
 #pragma config CP0 = OFF,CP1 = OFF, CP2 = OFF, CP3 = OFF
-
-
 #pragma config CPB = OFF, CPD = OFF
-
-
 #pragma config WRT0 = OFF, WRT1 = OFF, WRT2 = OFF, WRT3 = OFF
-
-
 #pragma config WRTC = OFF, WRTB = OFF, WRTD = OFF
-
-
 #pragma config EBTR0 = OFF, EBTR1 = OFF, EBTR2 = OFF, EBTR3 = OFF
-
-
 #pragma config EBTRB = OFF
-
-
-
-
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
@@ -5778,73 +5746,44 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 47 "pruebilla.c" 2
-# 59 "pruebilla.c"
-void inicializarSensor(void){
-    TRISBbits.RB2 = 0;
-    TRISBbits.RB3 = 0;
-    T1CON = 0xf8;
-    T1CONbits.TMR1ON = 1;
+# 15 "pruebilla.c" 2
+# 32 "pruebilla.c"
+void inicializarSensor(){
+    ADCON1bits.PCFG=0x0f;
+    TRISAbits.RA0 = 0;
+    TRISAbits.RA1 = 1;
+    TRISAbits.RA2=0;
 
 }
 
-float obtenerDistancia(void){
-    unsigned int timer_high;
-    unsigned int timer_low;
+void inicializarPantalla()
+{
 
-    LATBbits.LB2 =1;
+}
+
+
+
+float obtenerDistancia(void){
+
+    float distancia;
+    uint16_t tiempo;
+    LATAbits.LA0 =1;
     _delay((unsigned long)((10)*(48000000/4000.0)));
-    LATBbits.LB2 =0;
-    while(PORTBbits.RB3==0);
-    TMR1H=0x00;
-    TMR1L=0x00;
-    while(PORTBbits.RB3==1);
-    timer_low=TMR1L;
-    timer_high=TMR1H;
-    float dis_hc = (((timer_high<<8)+timer_low)*0.000666*34.0)/2.0;
-    return dis_hc;
+    LATAbits.LA0 =0;
+    TMR0 =0;
+    while(PORTAbits.RA1==0);
+    T0CONbits.TMR0ON=1;
+    while(PORTAbits.RA1==1);
+    T0CONbits.TMR0ON=0;
+    tiempo=TMR0;
+    distancia=tiempo*0.017/2.0;
+    return distancia;
 }
 
 
 
 
 int acumulador=7;
-void setOne(){
-    LATCbits.LC2=1;
-    LATCbits.LC0=1;
-    LATCbits.LC0=0;
-    LATCbits.LC2=0;
-    LATCbits.LC1=1;
-    LATCbits.LC1=0;
-}
-
-void setZero(){
-    LATCbits.LC2=0;
-    LATCbits.LC0=1;
-    LATCbits.LC0=0;
-    LATCbits.LC2=1;
-    LATCbits.LC1=1;
-    LATCbits.LC1=0;
-}
-
-void desplazamiento(){
-    for(int i=0;i<8;i++){
-        if(i==acumulador){
-            setZero();
-        }
-        else{
-            setOne();
-        }
-
-    }
-
-    if(acumulador<0){
-        acumulador=7;
-    }
-    acumulador--;
-}
-
-
 
 void Send_Byte_Data(uint8_t b_m1)
 {
@@ -5860,23 +5799,36 @@ void Send_Byte_Data(uint8_t b_m1)
 
 void main() {
 
+
     const uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
 
     const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
     uint8_t contador_binario=0x80;
     int CONTADOR =0;
-    ADCON1bits.PCFG=0x0f;
+# 97 "pruebilla.c"
+    inicializarSensor();
+
+
+
+
+
+
     TRISD = 0x00;
     TRISC = 0x00;
     LATD = 0x00;
-    LATC = 0x00;
     LATCbits.LC6=1;
-    inicializarSensor();
+    LATAbits.LA0 =0;
+    LATAbits.LA2=1;
  while(1)
     {
-        _delay((unsigned long)((1)*(48000000/4000.0)));
+        if(PORTAbits.RA1==1)
+            LATAbits.LA0 =1;
+        else
+            LATAbits.LA0 =0;
 
 
+
+        _delay((unsigned long)((100)*(48000000/4000.0)));
 
         Send_Byte_Data(~contador_binario);
         contador_binario=contador_binario>>1;
@@ -5890,7 +5842,6 @@ void main() {
         {
             CONTADOR=0;
         }
-
 
 
     }
