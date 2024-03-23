@@ -33,8 +33,9 @@ void inicializarSensor(){
     ADCON1bits.PCFG=0x0f;
     TRIG_DIR = 0;
     ECHO_DIR = 1;
+    TRIG_PIN=0;
     T0CON=0x88;
-    TMR0=0;
+    T0CONbits.TMR0ON=1;
 }
 
 void inicializarPantalla()
@@ -46,19 +47,20 @@ void inicializarPantalla()
 
 float obtenerDistancia(void){
     
-    float distancia;
-    uint16_t tiempo;
+    unsigned int timer_l;
+    unsigned int timer_h;
     TRIG_PIN =1;
     __delay_ms(10);
     TRIG_PIN =0;
-    TMR0 =0;
     while(ECHO_PIN==0);
-    T0CONbits.TMR0ON=1;
+    TMR0H=0x00;
+    TMR0L=0x00;
     while(ECHO_PIN==1);
-    T0CONbits.TMR0ON=0;
-    tiempo=TMR0;
-    distancia=tiempo*0.017/2.0;
-    return distancia;
+    timer_l=TMR0L;
+    timer_h=TMR0H;
+    float d = (((timer_h<<8)+timer_l)*0.000666*34.0)/2.0;
+    return d;
+    
 }
 
 

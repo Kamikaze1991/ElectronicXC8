@@ -5748,12 +5748,14 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
 # 15 "pruebilla.c" 2
 # 30 "pruebilla.c"
+uint16_t fila_flow;
+uint16_t columna_flow;
 void inicializarSensor(){
     ADCON1bits.PCFG=0x0f;
     TRISAbits.RA0 = 0;
     TRISAbits.RA1 = 1;
-    T0CON=0x88;
-    TMR0=0;
+    T1CON=0xf8;
+    T1CONbits.TMR1ON = 1;
 }
 
 void inicializarPantalla()
@@ -5765,19 +5767,21 @@ void inicializarPantalla()
 
 float obtenerDistancia(void){
 
-    float distancia;
-    uint16_t tiempo;
+
+    unsigned int timer_low;
+    unsigned int timer_high;
     LATAbits.LA0 =1;
     _delay((unsigned long)((10)*(48000000/4000.0)));
     LATAbits.LA0 =0;
-    TMR0 =0;
     while(PORTAbits.RA1==0);
-    T0CONbits.TMR0ON=1;
+    TMR1H=0x00;
+    TMR1L=0x00;
     while(PORTAbits.RA1==1);
-    T0CONbits.TMR0ON=0;
-    tiempo=TMR0;
-    distancia=tiempo*0.017/2.0;
-    return distancia;
+    timer_low=TMR1L;
+    timer_high=TMR1H;
+
+    return (((timer_high<<8)+timer_low)*0.000666*34.0)/2.0;
+
 }
 
 
@@ -5798,26 +5802,19 @@ void Send_Byte_Data(uint8_t b_m1)
 }
 
 void drawCoord(int fila_in, int columna_in){
-        int col_in = fila_in;
-        int fil_in= columna_in;
+        int col_in = columna_in;
+        int fil_in= fila_in;
         fil_in=(fil_in-7)*-1;
-        uint8_t fila=0x80;
-        uint8_t columna=0x80;
-        columna=columna>>col_in;
-        fila=fila>>fil_in;
-        LATD=fila;
-        Send_Byte_Data(~columna);
+        fila_flow=0x80;
+        columna_flow=0x80;
+        columna_flow=columna_flow>>col_in;
+        fila_flow=fila_flow>>fil_in;
+        Send_Byte_Data(~columna_flow);
+        LATD=fila_flow;
 }
 
 void main() {
-
-
-    uint8_t bicubic[8]={0x10,0x18,0x1c,0xfe,0xfe,0x1c,0x18,0x10};
-
-    const uint8_t peaton_stop[8] = {0x01, 0xe3, 0xf7, 0xe3, 0xd5, 0xf7, 0xeb, 0xeb};
-    uint8_t contador_binario=0x80;
-    int CONTADOR =0;
-# 107 "pruebilla.c"
+# 111 "pruebilla.c"
     inicializarSensor();
 
 
@@ -5829,14 +5826,27 @@ void main() {
     TRISC = 0x00;
     LATD = 0x00;
     LATCbits.LC6=1;
-
+    int contador=0;
  while(1)
     {
 
 
-        _delay((unsigned long)((1)*(48000000/4000.0)));
 
-        drawCoord(0,0);
+        float distancia= obtenerDistancia();
+
+        if(distancia>0&&distancia<50)drawCoord(0,1);
+        else if(distancia>50&&distancia<100)drawCoord(0,0);
+        else if(distancia>100&&distancia<150)drawCoord(0,1);
+        else if(distancia>150&&distancia<200)drawCoord(0,2);
+        else if(distancia>200&&distancia<250)drawCoord(0,3);
+        else if(distancia>250&&distancia<300)drawCoord(0,4);
+        else if(distancia>300&&distancia<350)drawCoord(0,5);
+        else if(distancia>350&&distancia<400)drawCoord(0,6);
+        else if(distancia>400&&distancia<450)drawCoord(0,7);
+        else if(distancia>450&&distancia<500)drawCoord(1,0);
+        else drawCoord(1,1);
+
+
 
 
     }

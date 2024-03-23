@@ -5754,8 +5754,9 @@ void inicializarSensor(){
     ADCON1bits.PCFG=0x0f;
     TRISAbits.RA0 = 0;
     TRISAbits.RA1 = 1;
+    LATAbits.LA0=0;
     T0CON=0x88;
-    TMR0=0;
+    T0CONbits.TMR0ON=1;
 }
 
 void inicializarPantalla()
@@ -5767,19 +5768,20 @@ void inicializarPantalla()
 
 float obtenerDistancia(void){
 
-    float distancia;
-    uint16_t tiempo;
+    unsigned int timer_l;
+    unsigned int timer_h;
     LATAbits.LA0 =1;
     _delay((unsigned long)((10)*(48000000/4000.0)));
     LATAbits.LA0 =0;
-    TMR0 =0;
     while(PORTAbits.RA1==0);
-    T0CONbits.TMR0ON=1;
+    TMR0H=0x00;
+    TMR0L=0x00;
     while(PORTAbits.RA1==1);
-    T0CONbits.TMR0ON=0;
-    tiempo=TMR0;
-    distancia=tiempo*0.017/2.0;
-    return distancia;
+    timer_l=TMR0L;
+    timer_h=TMR0H;
+    float d = (((timer_h<<8)+timer_l)*0.000666*34.0)/2.0;
+    return d;
+
 }
 
 
@@ -5812,7 +5814,7 @@ void drawCoord(int fila_in, int columna_in){
 }
 
 void main() {
-# 109 "pruebilla.c"
+# 111 "pruebilla.c"
     inicializarSensor();
 
 

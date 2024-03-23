@@ -5,6 +5,8 @@
 [d frameptr 4065 ]
 "4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
 "86 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\ftadd.c
@@ -29,13 +31,15 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"30 C:\Users\Woozi\MPLABXProjects\ElectronicXC8\pruebilla.c
+"32 C:\Users\Woozi\MPLABXProjects\ElectronicXC8\pruebilla.c
 [v _inicializarSensor inicializarSensor `(v  1 e 1 0 ]
-"67
+"47
+[v _obtenerDistancia obtenerDistancia `(f  1 e 4 0 ]
+"71
 [v _Send_Byte_Data Send_Byte_Data `(v  1 e 1 0 ]
-"79
+"83
 [v _drawCoord drawCoord `(v  1 e 1 0 ]
-"91
+"95
 [v _main main `(v  1 e 1 0 ]
 [s S67 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -46,7 +50,7 @@
 `uc 1 RA6 1 0 :1:6 
 ]
 "2353 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f4550.h
-[s S147 . 1 `uc 1 AN0 1 0 :1:0 
+[s S196 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
@@ -54,20 +58,20 @@
 `uc 1 AN4 1 0 :1:5 
 `uc 1 OSC2 1 0 :1:6 
 ]
-[s S155 . 1 `uc 1 . 1 0 :2:0 
+[s S204 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S161 . 1 `uc 1 . 1 0 :5:0 
+[s S210 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S164 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S213 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 ]
-[u S166 . 1 `S67 1 . 1 0 `S147 1 . 1 0 `S155 1 . 1 0 `S161 1 . 1 0 `S164 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES166  1 e 1 @3968 ]
-[s S97 . 1 `uc 1 LATA0 1 0 :1:0 
+[u S215 . 1 `S67 1 . 1 0 `S196 1 . 1 0 `S204 1 . 1 0 `S210 1 . 1 0 `S213 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES215  1 e 1 @3968 ]
+[s S146 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -76,7 +80,7 @@
 `uc 1 LATA6 1 0 :1:6 
 ]
 "2998
-[s S105 . 1 `uc 1 LA0 1 0 :1:0 
+[s S154 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -84,9 +88,9 @@
 `uc 1 LA5 1 0 :1:5 
 `uc 1 LA6 1 0 :1:6 
 ]
-[u S113 . 1 `S97 1 . 1 0 `S105 1 . 1 0 ]
-[v _LATAbits LATAbits `VES113  1 e 1 @3977 ]
-[s S226 . 1 `uc 1 LATC0 1 0 :1:0 
+[u S162 . 1 `S146 1 . 1 0 `S154 1 . 1 0 ]
+[v _LATAbits LATAbits `VES162  1 e 1 @3977 ]
+[s S251 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -94,15 +98,15 @@
 `uc 1 LATC7 1 0 :1:7 
 ]
 "3208
-[s S233 . 1 `uc 1 LC0 1 0 :1:0 
+[s S258 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S240 . 1 `S226 1 . 1 0 `S233 1 . 1 0 ]
-[v _LATCbits LATCbits `VES240  1 e 1 @3979 ]
+[u S265 . 1 `S251 1 . 1 0 `S258 1 . 1 0 ]
+[v _LATCbits LATCbits `VES265  1 e 1 @3979 ]
 "3263
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 [s S59 . 1 `uc 1 TRISA0 1 0 :1:0 
@@ -138,67 +142,150 @@
 ]
 [u S39 . 1 `S24 1 . 1 0 `S27 1 . 1 0 `S34 1 . 1 0 ]
 [v _ADCON1bits ADCON1bits `VES39  1 e 1 @4033 ]
-"8069
-[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
-[s S200 . 1 `uc 1 T0PS 1 0 :3:0 
-`uc 1 PSA 1 0 :1:3 
-`uc 1 T0SE 1 0 :1:4 
-`uc 1 T0CS 1 0 :1:5 
-`uc 1 T08BIT 1 0 :1:6 
-`uc 1 TMR0ON 1 0 :1:7 
+"7415
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S96 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
-"8089
-[s S207 . 1 `uc 1 T0PS0 1 0 :1:0 
-`uc 1 T0PS1 1 0 :1:1 
-`uc 1 T0PS2 1 0 :1:2 
+"7448
+[s S99 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
 ]
-[u S211 . 1 `S200 1 . 1 0 `S207 1 . 1 0 ]
-[v _T0CONbits T0CONbits `VES211  1 e 1 @4053 ]
-"8139
-[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
-"91 C:\Users\Woozi\MPLABXProjects\ElectronicXC8\pruebilla.c
+[s S107 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S113 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S118 . 1 `S96 1 . 1 0 `S99 1 . 1 0 `S107 1 . 1 0 `S113 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES118  1 e 1 @4045 ]
+"7525
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"7532
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+"30 C:\Users\Woozi\MPLABXProjects\ElectronicXC8\pruebilla.c
+[v _fila_flow fila_flow `us  1 e 2 0 ]
+"31
+[v _columna_flow columna_flow `us  1 e 2 0 ]
+"95
 [v _main main `(v  1 e 1 0 ]
 {
-"96
-[v main@peaton_stop peaton_stop `C[8]uc  1 a 8 23 ]
-"94
-[v main@bicubic bicubic `[8]uc  1 a 8 15 ]
-"91
-[v main@F3231 F3231 `[8]uc  1 s 8 F3231 ]
-"94
-[v main@F3233 F3233 `C[8]uc  1 s 8 F3233 ]
-"129
+"128
+[v main@distancia distancia `f  1 a 4 78 ]
+"146
 } 0
-"30
+"47
+[v _obtenerDistancia obtenerDistancia `(f  1 e 4 0 ]
+{
+"51
+[v obtenerDistancia@timer_high timer_high `ui  1 a 2 76 ]
+"50
+[v obtenerDistancia@timer_low timer_low `ui  1 a 2 74 ]
+"64
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S651 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S656 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S659 . 4 `l 1 i 4 0 `d 1 f 4 0 `S651 1 fAsBytes 4 0 `S656 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S659  1 a 4 33 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 27 ]
+[s S727 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S730 . 2 `s 1 i 2 0 `us 1 n 2 0 `S727 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S730  1 a 2 37 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 31 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 26 ]
+"8
+[v ___flmul@b b `d  1 p 4 14 ]
+[v ___flmul@a a `d  1 p 4 18 ]
+"205
+} 0
+"11 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 58 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 51 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 56 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 63 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 62 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 55 ]
+"11
+[v ___fldiv@b b `d  1 p 4 39 ]
+[v ___fldiv@a a `d  1 p 4 43 ]
+"185
+} 0
+"32 C:\Users\Woozi\MPLABXProjects\ElectronicXC8\pruebilla.c
 [v _inicializarSensor inicializarSensor `(v  1 e 1 0 ]
 {
-"36
+"38
 } 0
-"79
+"83
 [v _drawCoord drawCoord `(v  1 e 1 0 ]
 {
-"81
-[v drawCoord@fil_in fil_in `i  1 a 2 10 ]
-"80
-[v drawCoord@col_in col_in `i  1 a 2 8 ]
+"85
+[v drawCoord@fil_in fil_in `i  1 a 2 11 ]
 "84
-[v drawCoord@columna columna `uc  1 a 1 13 ]
+[v drawCoord@col_in col_in `i  1 a 2 9 ]
 "83
-[v drawCoord@fila fila `uc  1 a 1 12 ]
-"79
 [v drawCoord@fila_in fila_in `i  1 p 2 2 ]
 [v drawCoord@columna_in columna_in `i  1 p 2 4 ]
-"89
+"93
 } 0
-"67
+"71
 [v _Send_Byte_Data Send_Byte_Data `(v  1 e 1 0 ]
 {
 [v Send_Byte_Data@b_m1 b_m1 `uc  1 a 1 wreg ]
-"69
+"73
 [v Send_Byte_Data@i i `uc  1 a 1 1 ]
-"67
+"71
 [v Send_Byte_Data@b_m1 b_m1 `uc  1 a 1 wreg ]
-"69
+"73
 [v Send_Byte_Data@b_m1 b_m1 `uc  1 a 1 0 ]
-"77
+"81
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 0 ]
+[v ___flge@ff2 ff2 `d  1 p 4 4 ]
+"19
 } 0
